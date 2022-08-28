@@ -6,3 +6,36 @@ function getComputerChoice() {
     const randomNum = Math.floor(Math.random() * choice.length);
     return choice[randomNum];
 }
+
+function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
+
+    if (playerSelection === computerSelection) {
+        return 'Its a Tie!';
+    }
+    if (playerSelection === 'rock' && computerSelection == 'paper') {
+        computerScore++;
+        return 'Its a Lose!';
+    }
+    if (playerSelection === 'rock' && computerSelection == 'scissors') {
+        userScore++;
+        return 'Its a Win!';
+    }
+    if (playerSelection === 'paper' && computerSelection == 'rock') {
+        userScore++;
+        return 'Its a Win!';
+    }
+    if (playerSelection === 'paper' && computerSelection == 'scissors') {
+        computerScore++;
+        return 'Its a Lose!';
+    }
+    if (playerSelection === 'scissors' && computerSelection == 'rock') {
+        computerScore++;
+        return 'Its a Lose!';
+    }
+    if (playerSelection === 'scissors' && computerSelection == 'paper') {
+        userScore++;
+        return 'Its a Win!';
+    }
+}

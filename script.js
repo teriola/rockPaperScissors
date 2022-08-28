@@ -39,3 +39,20 @@ function playRound(playerSelection, computerSelection) {
         return 'Its a Win!';
     }
 }
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let userChoise = prompt('Enter Rock, Paper or Scissors:');
+
+        console.log(playRound(userChoise, getComputerChoice()));
+        console.log(`User: ${userScore} Computer: ${computerScore}`);
+    }
+
+    if (userScore > computerScore) {
+        console.log('Congratulations! You Win the game!');
+    } else if (computerScore > userScore) {
+        console.log('Oh no! You lost the game!');
+    } else if (computerScore === userScore) {
+        console.log('Its a draw game!');
+    }
+}
